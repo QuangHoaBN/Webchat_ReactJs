@@ -25,10 +25,12 @@ class Login_SignUp extends Component {
         this.setState({[filter]: evt})
     }
     loginClick(){
-        this.setState({isHiddenLogin: !this.setState.isHiddenLogin});
+        this.setState({isHiddenLogin: false});
+        this.setState({isHiddenSignUp: true});
     }
     signUpClick(){
-        this.setState({isHiddenSignUp: !this.setState.isHiddenSignUp});
+        this.setState({isHiddenSignUp: false});
+        this.setState({isHiddenLogin: true});
     }
 
     render() {
@@ -44,20 +46,12 @@ class Login_SignUp extends Component {
                                     <img src={logo}></img>
                                 </div>
                                 <div className='title d-flex justify-content-center'>
-                                    <a href='#login' onClick={this.loginClick} className='login align-items-center'>Login</a>
-                                    <a href='#signup' onClick={this.signUpClick} className='signup align-items-center'>Sign Up</a>
+                                    <p onClick={this.loginClick} className='login'>Login</p>
+                                    <p href='#signup' onClick={this.signUpClick} className='signup'>Sign Up</p>
                                 </div>
-                                {}
-                                {/* <div className='show'>
-                                    <div className='content'>
-                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
-                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
-                                    </div>
-                                    <div className='footer'>
-                                        <Button name='Login'/>
-                                        <p className='forgot_pass'>Forgot password</p>
-                                    </div>
-                                </div>
+
+                                {this.state.isHiddenSignUp === false 
+                                    ? 
                                 <div className='no_show'>
                                     <div className='content'>
                                         <Login name ='email' onChange={this.onChange} value={this.state.username} hint='ex: email@example.com'/>
@@ -67,8 +61,39 @@ class Login_SignUp extends Component {
                                     <div className='footer'>
                                         <Button name='Sign Up'/>
                                     </div>
+                                </div>
+                                    : 
+                                <div className='show'>
+                                    <div className='content'>
+                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
+                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
+                                    </div>
+                                    <div className='footer'>
+                                        <Button name='Login'/>
+                                        <p className='forgot_pass'>Forgot password</p>
+                                    </div>
+                                </div> 
+                                }
+                                {/* <div className='show'>
+                                    <div className='content'>
+                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
+                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
+                                    </div>
+                                    <div className='footer'>
+                                        <Button name='Login'/>
+                                        <p className='forgot_pass'>Forgot password</p>
+                                    </div>
                                 </div> */}
-                                <p>{this.state.isHiddenLogin}</p>
+                                {/* <div className='no_show'>
+                                    <div className='content'>
+                                        <Login name ='email' onChange={this.onChange} value={this.state.username} hint='ex: email@example.com'/>
+                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
+                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
+                                    </div>
+                                    <div className='footer'>
+                                        <Button name='Sign Up'/>
+                                    </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className='col-xl-3'></div>
@@ -80,5 +105,4 @@ class Login_SignUp extends Component {
         );
     }
 }
-
 export default Login_SignUp;
