@@ -1,0 +1,77 @@
+.author-wrap {
+    background-image: url('bg.jpg');
+    background-size: cover;
+}
+.author {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color:snow;
+    border-radius: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.logo {
+    padding-top: 50px;
+}
+.logo img {
+    width: 15%;
+    height: 15%;
+}
+.title {
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    align-items: center;
+    cursor: pointer;
+}
+.login {
+    width: 100px;
+    padding-right: 15px;
+    text-align: center;
+    color: black;
+}
+.signup {
+    width: 100px;
+    padding-left: 15px;
+    text-align: center;
+    color: black;
+}
+input {
+    width: 100%;
+    border-radius: 5px;
+}
+.user_pass {
+    padding-bottom: 1em;
+}
+.btn {
+    background-color: #f4ae7b;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+}
+.btn:hover {
+    background-color: #c44860;
+    color: #fff;
+}
+.content_login {
+    margin-top: 15px;
+}
+.forgot_pass {
+    width: 100%;
+    text-align: right;
+    color: orange;
+}
+.forgot_pass:hover {
+    text-decoration: underline;
+}
+.footer {
+    padding-bottom: 50px;
+}
+.show {
+    padding-top: 30px;
+    display: none;
+}
+.no_show {
+    padding-top: 30px;
+    display: block;
+}
