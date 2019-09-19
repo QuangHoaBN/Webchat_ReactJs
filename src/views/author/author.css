@@ -1,6 +1,7 @@
 .author-wrap {
     background-image: url('bg.jpg');
     background-size: cover;
+    min-height: 100vh;
 }
 .author {
     margin-top: 100px;
@@ -9,6 +10,7 @@
     border-radius: 10px;
     padding-left: 70px;
     padding-right: 70px;
+    border: 2px solid #c44860;
 }
 .logo {
     padding-top: 50px;
@@ -20,7 +22,7 @@
 .title {
     padding-top: 30px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     align-items: center;
     cursor: pointer;
 }

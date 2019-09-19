@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import Login_SignUp from './views/author/author.js';
+import Homepage from "./views/main/Homepage.js";
 
 function App() {
   return (
     <div>
-      <Login_SignUp />
+      {/* <Login_SignUp /> */}
+      <Homepage />
     </div>
   );
 }
