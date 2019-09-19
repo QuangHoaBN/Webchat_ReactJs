@@ -59,7 +59,7 @@ input {
     background-color: #c44860;
     color: #fff;
 }
-.content_login {
+.content {
     margin-top: 15px;
 }
 .forgot_pass {
@@ -71,11 +71,11 @@ input {
     text-decoration: underline;
 }
 .footer {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 .show {
-    padding-top: 30px;
+    padding-top: 10px;
 }
 .no_show {
-    padding-top: 30px;
+    padding-top: 10px;
 }
