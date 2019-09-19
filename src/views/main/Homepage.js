@@ -7,10 +7,10 @@ export default class Homepage extends React.Component {
     render() {
         return (
             <div class = "fluid-container">
-                <div class = "col-2">
+                <div class = "col-3">
                     <SideBar />
                 </div>
-                <div class = "col-10">
+                <div class = "col-9">
                     
                 </div>
             </div>

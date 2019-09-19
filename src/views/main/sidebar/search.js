@@ -24,9 +24,11 @@ export default class Search extends React.Component {
 
     render() {
         return (
-            <div>
-                <input value = {this.state.inputText} name = "inputText" onChange = {this.handleChangeText}/>
-                <button onClick = {this.handleSearch(this.state.inputText)}>S</button>
+            <div class='search-bar'> 
+                <div class='input-search'>
+                    <img class='' src='https://static.thenounproject.com/png/105498-200.png'></img>
+                    <input value = {this.state.inputText} name = "inputText" onChange = {this.handleChangeText}/>
+                </div>
             </div>
         )
     }

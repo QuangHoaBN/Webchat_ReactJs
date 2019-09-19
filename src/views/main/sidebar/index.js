@@ -1,4 +1,4 @@
-import Search from './Search'
+import Search from './search'
 import SideBar from './SideBar'
 import FriendList from './FriendList'
 
