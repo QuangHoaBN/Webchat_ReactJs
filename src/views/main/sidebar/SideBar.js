@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from './Search'
+import Search from './search'
 import FriendList from './FriendList'
 import './sidebar.css'
 
