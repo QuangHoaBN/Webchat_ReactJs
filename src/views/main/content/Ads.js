@@ -19,7 +19,7 @@ class Ads extends Component {
             autoplaySpeed: 3000
           };
         return (
-            <div>
+            <div className='main-ads'>
                 <div className='row title'>
                     <div className='col-xl-3'></div>
                     <div className='col-xl-6'>
@@ -35,7 +35,7 @@ class Ads extends Component {
                             <img className='ads' src={Ads1} alt='Ads 1'></img>
                         </div>
                         <div className='ads-width'>
-                            <img className='ads' src={Ads2} alt='Ads 1'></img>
+                            <img className='ads' src={Ads1} alt='Ads 1'></img>
                         </div>
                         <div className='ads-width'>
                             <img className='ads' src={Ads1} alt='Ads 1'></img>

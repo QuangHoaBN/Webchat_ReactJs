@@ -11,3 +11,7 @@
 .title p {
     text-align: center;
 }
+.main-ads {
+    height: 100%;
+    display: none;
+}
