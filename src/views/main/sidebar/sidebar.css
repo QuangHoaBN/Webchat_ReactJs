@@ -1,6 +1,36 @@
 .search-bar {
-    padding-bottom: 30px;
-    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-bar::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #e2e0e0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.search-bar>.input-search {
+    border: 1px solid #c4470d;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-bar>.input-search>input {
+    border: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.search-bar>.input-search>img {
+    height: 25px;
+    width: auto;
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .fAvatar, .fName {
@@ -15,4 +45,23 @@
 
 .fName {
     margin-left: 10px;
+}
+
+.option {
+    text-align: center;
+}
+
+.option>p {
+    display: inline;
+    cursor: pointer;
+    width: 50%;
+}
+
+.option>p:hover {
+    color: #dda52d;
+}
+
+.fItem:hover {
+    background-color: #ecaa8b;
+    cursor: pointer;
 }
