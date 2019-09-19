@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../bootstrap.min.css';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './author.css';
 import logo from './logo.png';
 import Login from './login.js';
@@ -47,14 +47,14 @@ class Login_SignUp extends Component {
                                 </div>
                                 <div className='title d-flex justify-content-center'>
                                     <p onClick={this.loginClick} className='login'>Login</p>
-                                    <p href='#signup' onClick={this.signUpClick} className='signup'>Sign Up</p>
+                                    <p onClick={this.signUpClick} className='signup'>Sign Up</p>
                                 </div>
 
                                 {this.state.isHiddenSignUp === false 
                                     ? 
                                 <div className='no_show'>
                                     <div className='content'>
-                                        <Login name ='email' onChange={this.onChange} value={this.state.username} hint='ex: email@example.com'/>
+                                        <Login name ='email' onChange={this.onChange} value={this.state.username} hint='Example: email@example.com'/>
                                         <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
                                         <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
                                     </div>
