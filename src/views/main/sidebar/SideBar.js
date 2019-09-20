@@ -77,7 +77,7 @@ class SideBar extends Component {
                     </p>
                 </div>    
 
-                <FriendList className='FriendList' listFriend = {this.state.fList}/>
+                <FriendList className='' listFriend = {this.state.fList}/>
             </div>
         );
     }

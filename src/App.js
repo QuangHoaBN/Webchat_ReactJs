@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Homepage from './views/main/Homepage'
+import Homepage from './views/main/Homepage';
+import Authen from './views/author/author';
+import {
+  BrowserRouter as Router, 
+  Route, 
+  Redirect
+} from 'react-router-dom';
 
-function App() {
-  return (
+// function App() {
+  // return (
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -22,8 +28,63 @@ function App() {
     //   </header>
     // </div>
 
-    <Homepage />
-  );
+    // <Homepage />
+    // <Authen />
+  // );
+// }
+
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAuthenticated : false
+    }
+    this.Login = this.Login.bind(this);
+    this.Logout = this.Logout.bind(this);
+  }
+
+  Login() {
+    this.setState({
+      isAuthenticated : true
+    })
+  }
+
+  Logout() {
+    this.setState({
+      isAuthenticated : false
+    })
+  }
+
+  render() {
+    console.log(this.state.isAuthenticated);
+    let isAuthen = this.state.isAuthenticated;
+    let routerLink = () => 
+      isAuthen ?
+        (<Router>
+          <Route path = '/homepage' Component = {HomepageShow}/>
+        </Router>) : 
+        (<Router>
+          <Route path = '/login' Component = {AuthenShow}/>
+        </Router>)
+
+    return (
+      // <Router>
+      //   <Route path = "/" render={() => (this.isAuthenticated ? <Homepage /> : <Redirect to="/login"/>)}/>
+      //   <Route path = "/login" component = {AuthenShow}/>
+      // </Router>
+      <Homepage />
+    );
+  }
+}
+
+function HomepageShow(){
+  return <Homepage />
+}
+
+function AuthenShow(){
+  return <Authen />
 }
 
 export default App;

@@ -1,6 +1,7 @@
 .author-wrap {
     background-image: url('bg.jpg');
     background-size: cover;
+    min-height: 100vh;
 }
 .author {
     margin-top: 100px;
