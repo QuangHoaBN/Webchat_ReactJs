@@ -2,7 +2,7 @@
     height: 100%;
 }
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 50px;
     width: 100%;
@@ -16,17 +16,22 @@
     padding-left: 10px;
 }
 .content {
-    position: absolute;
+    position: fixed;
     overflow: auto;
     top: 60px;
     bottom: 50px;
     height: auto;
     overflow-x: hidden;
     width: 100%;
-    background-color: darkseagreen;
+    background-color: #145b68;
+    /* background-image: linear-gradient(to right, rgba(255,0,0,0), #133940); */
 }
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 50px;
+    width: 100%;
+}
+.chat_input {
+    width: 100%;
 }

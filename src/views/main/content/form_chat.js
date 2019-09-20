@@ -18,8 +18,10 @@ class Form_Chat extends Component {
                 </div>
                 <div className='content row'></div>
                 <div className='footer row'>
-                    <input value='' onChange='' placeholder='Nhập ...'></input>
-                    <FontAwesomeIcon icon={faPaperPlane} />
+                    <input className='col-xl-10 chat_input' value='' onChange='' placeholder='Nhập ...'></input>
+                    <div className='col-xl-2'>
+                        <FontAwesomeIcon icon={faPaperPlane} />
+                    </div>
                 </div>
             </div>
         );
