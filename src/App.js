@@ -70,11 +70,11 @@ class App extends Component {
         </Router>)
 
     return (
-      // <Router>
-      //   <Route path = "/" render={() => (this.isAuthenticated ? <Homepage /> : <Redirect to="/login"/>)}/>
-      //   <Route path = "/login" component = {AuthenShow}/>
-      // </Router>
-      <Homepage />
+      <Router>
+        <Route path = "/" render={() => (this.isAuthenticated ? <Homepage /> : <Redirect to="/login"/>)}/>
+        <Route path = "/login" component = {AuthenShow}/>
+      </Router>
+      // <Homepage />
     );
   }
 }

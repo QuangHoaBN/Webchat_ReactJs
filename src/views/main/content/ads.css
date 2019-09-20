@@ -1,0 +1,17 @@
+.ads {
+    width: 100%;
+    object-fit: fill;
+}
+.title {
+    padding-top: 30px;
+}
+.title h2 {
+    text-align: center;
+}
+.title p {
+    text-align: center;
+}
+.main-ads {
+    height: 100%;
+    display: none;
+}

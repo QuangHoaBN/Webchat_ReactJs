@@ -19,6 +19,7 @@ class Login_SignUp extends Component {
         this.onChange=this.onChange.bind(this);
         this.loginClick=this.loginClick.bind(this);
         this.signUpClick=this.signUpClick.bind(this);
+        this.onClickLogin=this.onClickLogin.bind(this);
     }
 
     onChange(evt, filter){
@@ -32,7 +33,8 @@ class Login_SignUp extends Component {
         this.setState({isHiddenSignUp: false});
         this.setState({isHiddenLogin: true});
     }
-
+    onClickLogin(){
+    }
     render() {
         return (
             <div className='author-wrap'>
@@ -69,7 +71,7 @@ class Login_SignUp extends Component {
                                         <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
                                     </div>
                                     <div className='footer'>
-                                        <Button name='Login'/>
+                                        <Button LoginClick={this.onClickLogin} name='Login'/>
                                         <p className='forgot_pass'>Forgot password</p>
                                     </div>
                                 </div> 
