@@ -23,6 +23,7 @@
     border: none;
     margin-bottom: 5px;
     margin-top: 5px;
+    width: auto !important; 
 }
 
 .search-bar>.input-search>img {

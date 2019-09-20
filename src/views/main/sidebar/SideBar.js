@@ -65,7 +65,7 @@ class SideBar extends Component {
         const onlShow = this.state.onlShow;
         return (
             <div>
-                <img class="img-fluid logo" src="http://itplus-academy.edu.vn/upload/b7ad33828b0773d8f301805541d453df/files/java/%E1%BA%A2nh/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg" alt="icon"></img>
+                <img class="img-fluid logo-img" src="http://itplus-academy.edu.vn/upload/b7ad33828b0773d8f301805541d453df/files/java/%E1%BA%A2nh/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg" alt="icon"></img>
                 <Search/>
 
                 <div class='option d-flex justify-content-between'>
@@ -77,7 +77,7 @@ class SideBar extends Component {
                     </p>
                 </div>    
 
-                <FriendList className='FriendList' listFriend = {this.state.fList}/>
+                <FriendList className='' listFriend = {this.state.fList}/>
             </div>
         );
     }
