@@ -63,18 +63,19 @@ class App extends Component {
     let routerLink = () => 
       isAuthen ?
         (<Router>
-          <Route path = '/homepage' Component = {HomepageShow}/>
+          <Route exact path = "/" Component = {HomepageShow}/>
         </Router>) : 
         (<Router>
-          <Route path = '/login' Component = {AuthenShow}/>
+          <Route path = "/login" Component = {AuthenShow}/>
         </Router>)
 
     return (
-      // <Router>
-      //   <Route path = "/" render={() => (this.isAuthenticated ? <Homepage /> : <Redirect to="/login"/>)}/>
-      //   <Route path = "/login" component = {AuthenShow}/>
-      // </Router>
-      <Homepage />
+      <Router>
+        <Route path = "/" render={() => (this.state.isAuthenticated ? <Redirect to="/"/> : <Redirect to="/login"/>)}/>
+        <Route path = "/login" component = {AuthenShow}/>
+        <Route exact path = "/" component = {HomepageShow}/>
+      </Router>
+      // <Homepage />
     );
   }
 }
