@@ -3,12 +3,13 @@
     position: relative;
 }
 .header {
-    padding-top: 50px;
-    position: relative;
+    position: absolute;
     top: 0;
+    height: 50px;
     width: 100%;
+    padding-top: 10px;
 }
-p {
+.name p {
      margin-bottom: 0 !important;   
      font-size: 20px;
 }
@@ -16,14 +17,17 @@ p {
     padding-left: 10px;
 }
 .content {
-    position: relative;
+    position: absolute;
     overflow: auto;
+    top: 60px;
+    bottom: 50px;
+    height: auto;
     overflow-x: hidden;
     width: 100%;
     background-color: darkseagreen;
-    height: 100vh;
 }
 .footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
+    height: 50px;
 }

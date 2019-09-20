@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-.col-3 {
-<<<<<<< HEAD
-=======
 .sidebar-wrapper {
->>>>>>> 7ef200902f31f2197107264492b7f165e5937c1c
     border-right: 1px solid #e2e0e0;
-=======
-    border-right: 1px solid black;
->>>>>>> main-chat
     height: 100vh;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
