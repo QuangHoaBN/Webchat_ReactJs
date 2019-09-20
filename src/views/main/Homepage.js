@@ -9,9 +9,9 @@ export default class Homepage extends React.Component {
     render() {
         return (
             <div className='web-chat'>
-                 <div class = "container-fluid sidebar-wrap">
+                 <div class = "container-fluid sidebar-wrapper">
                     <div className='row'>
-                    <div class = "col-3">
+                    <div class = "col-3 sidebar-wrapper">
                         <SideBar />
                     </div>
                     <div class = "col-9">

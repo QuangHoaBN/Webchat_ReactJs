@@ -1,8 +1,7 @@
-.sidebar-wrap {
+.sidebar-wrapper {
     border-right: 1px solid #e2e0e0;
     height: 100vh;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-    position: fixed;
 }
 .web-chat {
     position: fixed;
