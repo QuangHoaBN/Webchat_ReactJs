@@ -1,9 +1,9 @@
-.search-bar {
+.search-bar_sidebar {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.search-bar::after {
+.search-bar_sidebar::after {
     content: '';
     display: inline-block;
     width: 100%;
@@ -11,7 +11,7 @@
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
-.search-bar>.input-search {
+.search-bar_sidebar>.input-search_sidebar {
     border: 1px solid #c4470d;
     border-radius: 5px;
     width: 70%;
@@ -19,14 +19,14 @@
     margin-right: auto;
 }
 
-.search-bar>.input-search>input {
+.search-bar_sidebar>.input-search_sidebar>input {
     border: none;
     margin-bottom: 5px;
     margin-top: 5px;
     width: auto !important; 
 }
 
-.search-bar>.input-search>img {
+.search-bar_sidebar>.input-search_sidebar>img {
     height: 25px;
     width: auto;
     float: left;
@@ -34,35 +34,36 @@
     margin-left: 10px;
 }
 
-.fAvatar, .fName {
+.fAvatar_sidebar, .fName_sidebar {
     display: inline;
 }
 
-.fAvatar {
+.fAvatar_sidebar {
     width: 60px;
     height: 60px;
     border-radius: 5px;
 }
 
-.fName {
+.fName_sidebar {
     margin-left: 10px;
 }
 
-.option {
+.option_sidebar {
     text-align: center;
 }
 
-.option>p {
+.option_sidebar>p {
     display: inline;
     cursor: pointer;
+    white-space: pre;
     width: 50%;
 }
 
-.option>p:hover {
+.option_sidebar>p:hover {
     color: #dda52d;
 }
 
-.fItem:hover {
+.fItem_sidebar:hover {
     background-color: #ecaa8b;
     cursor: pointer;
 }

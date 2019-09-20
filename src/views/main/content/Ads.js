@@ -19,7 +19,7 @@ class Ads extends Component {
             autoplaySpeed: 3000
           };
         return (
-            <div className='main-ads'>
+            <div className='main-ads container'>
                 <div className='row title'>
                     <div className='col-xl-3'></div>
                     <div className='col-xl-6'>

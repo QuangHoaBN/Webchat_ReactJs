@@ -29,9 +29,9 @@ export default class FriendList extends React.Component {
         return(
             // this.state.fList.map((value, index) => (
                 this.props.listFriend.map((value, index) => (
-                <div class = "fItem">
-                    <img class = "img-fluid fAvatar" src = {value.imgUrl} alt = {value.fName} />
-                    <p class = "fName">{value.fName}</p>
+                <div class = "fItem_sidebar">
+                    <img class = "img-fluid fAvatar_sidebar" src = {value.imgUrl} alt = {value.fName} />
+                    <p class = "fName_sidebar">{value.fName}</p>
                 </div>
             ))
         )

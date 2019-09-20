@@ -24,10 +24,10 @@ export default class Search extends React.Component {
 
     render() {
         return (
-            <div class='search-bar'> 
-                <div class='input-search'>
+            <div class='search-bar_sidebar'> 
+                <div class='input-search_sidebar'>
                     <img class='' src='https://static.thenounproject.com/png/105498-200.png'></img>
-                    <input value = {this.state.inputText} name = "inputText" onChange = {this.handleChangeText}/>
+                    <input class='col-10' value = {this.state.inputText} name = "inputText" onChange = {this.handleChangeText}/>
                 </div>
             </div>
         )
