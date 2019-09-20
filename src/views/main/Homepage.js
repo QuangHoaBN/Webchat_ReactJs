@@ -25,17 +25,15 @@ export default class Homepage extends React.Component {
     // }
 
         return (
-            <div className='web-chat_main'>
-                <div class = "sidebar-wrapper_main">
+            <div className='web-chat_main'>   
                     <div class = "sidebar-wrapper_main">
                         <SideBar />
                     </div>
                     <div class = "chat-wrapper_main">
-                        <Ads />
-                        {/* <Form_Chat /> */}
+                        {/* <Ads /> */}
+                        <Form_Chat />
                     </div>
-                </div>
-            </div> 
+            </div>
         )
     }
 }
