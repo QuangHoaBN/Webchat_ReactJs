@@ -2,7 +2,7 @@
     height: 100%;
 }
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     height: 50px;
     width: 100%;
@@ -16,22 +16,28 @@
     padding-left: 10px;
 }
 .content {
-    position: fixed;
+    position: absolute;
     overflow: auto;
     top: 60px;
-    bottom: 50px;
+    bottom: 55px;
     height: auto;
     overflow-x: hidden;
     width: 100%;
     background-color: #145b68;
+    border-radius: 10px;
     /* background-image: linear-gradient(to right, rgba(255,0,0,0), #133940); */
 }
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     height: 50px;
     width: 100%;
 }
 .chat_input {
     width: 100%;
+}
+.icon-sent {
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
 }
