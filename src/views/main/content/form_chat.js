@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './form_chat.css';
 import Person from './images/person.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 class Form_Chat extends Component {
     render() {
@@ -16,7 +18,10 @@ class Form_Chat extends Component {
                         </div>
                     </div>
                     <div className='content row'></div>
-                    <div className='footer row'></div>
+                    <div className='footer row'>
+                        <input value='' onChange='' placeholder='Nhập ...'></input>
+                        <FontAwesomeIcon icon={faPaperPlane} />
+                    </div>
                 </div>
             </div>
         );
