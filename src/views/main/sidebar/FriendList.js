@@ -11,7 +11,7 @@ export default class FriendList extends React.Component {
         }
     }
 
-    componentWillMount(){
+    componentWillMount(){  
 
     }
 

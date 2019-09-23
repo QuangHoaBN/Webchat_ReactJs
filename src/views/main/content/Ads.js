@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Ads1 from "./images/ads-1.webp";
-import Ads2 from "./images/ads-2.webp";
 import './ads.css';
 import Slider from "react-slick";
 import "../../../../node_modules/slick-carousel/slick/slick.css";

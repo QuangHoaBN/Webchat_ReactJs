@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './form_chat.css';
-import Person from './images/person.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import Inbox_Send from './inbox_send';
+import InboxSend from './inbox_send';
 
 class Form_Chat extends Component {
     constructor(props) {
@@ -11,10 +10,11 @@ class Form_Chat extends Component {
         let now = new Date();
         this.state= {
             in_text: '',
-            out_text: '',
+            out_text:'',
             currenNow: now.getHours()+':'+now.getMinutes(),
             isSended: false,
             status: '',
+            list: []
         };
         this.input_text=this.input_text.bind(this);
         this.send=this.send.bind(this);
@@ -24,8 +24,15 @@ class Form_Chat extends Component {
     }
     send(){
         let now =new Date();
-        this.setState({out_text: this.state.in_text,currenNow: now.getHours()+':'+now.getMinutes(), status: 'Đã gửi',isSended: true ,in_text: ''});
-    
+        this.setState({out_text: this.state.in_text, currenNow: now.getHours()+':'+now.getMinutes(), status: 'Đã gửi',isSended: true ,in_text: ''});
+        // let now =new Date();
+        // const hList = [{out_text: this.state.in_text, currenNow: now.getHours()+':'+now.getMinutes(), status: 'Đã gửi'}]
+        // let lists=this.state.list;
+        // lists.push(hList);
+        // this.setState({
+        //     isSended: true, 
+        //     list: lists, in_text: ''});
+        //     console.log(this.state.list)
     }
     
     render() {
@@ -41,7 +48,8 @@ class Form_Chat extends Component {
                     </div>
                 </div>
                 <div className='content row'>
-                    {!this.state.isSended || this.state.out_text==='' ? '' : <Inbox_Send content={this.state.out_text} date={this.state.currenNow} status={this.state.status}/>}
+                    {!this.state.isSended || this.state.out_text==='' ? '' : <InboxSend content={this.state.out_text} date={this.state.currenNow} status={this.state.status}/>}
+                    {/* {!this.state.isSended || this.state.out_text==='' ? '' : <InboxSend listInbox={this.state.list} />} */}
                 </div>
                 <div className='footer row'>
                     <input className='col-xl-11 chat_input' value={this.state.in_text} onChange={this.input_text} placeholder='Nhập ...'></input>
