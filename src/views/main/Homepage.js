@@ -28,7 +28,7 @@ export default class Homepage extends React.Component {
             <div className='web-chat_main'>
                 <div class = "sidebar-wrapper_main">
                     <div class = "sidebar-wrapper_main">
-                        <SideBar />
+                        <SideBar userName = {localStorage.getItem("userName")} onClickLogout = {this.props.onClickLogout}/>
                     </div>
                     <div class = "chat-wrapper_main">
                         <Ads />

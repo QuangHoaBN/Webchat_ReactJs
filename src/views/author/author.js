@@ -4,6 +4,13 @@ import './author.css';
 import logo from './logo.png';
 import Login from './login.js';
 import Button from './login_signup_click.js'
+import Homepage from '../main/Homepage';
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect
+} from 'react-router-dom';
+
 
 class Login_SignUp extends Component {
     // eslint-disable-next-line no-useless-constructor
@@ -13,70 +20,77 @@ class Login_SignUp extends Component {
             username: '',
             password: '',
             email: '',
+            isAuthenticated: false,
             isHiddenLogin: true,
             isHiddenSignUp: true
         }
-        this.onChange=this.onChange.bind(this);
-        this.loginClick=this.loginClick.bind(this);
-        this.signUpClick=this.signUpClick.bind(this);
-        this.onClickLogin=this.onClickLogin.bind(this);
+        this.onChange = this.onChange.bind(this);
+        this.loginClick = this.loginClick.bind(this);
+        this.signUpClick = this.signUpClick.bind(this);
     }
 
-    onChange(evt, filter){
-        this.setState({[filter]: evt})
+    componentWillMount() {
+        this.setState({
+            isAuthenticated: localStorage.getItem("isAuthenticated")
+        })
     }
-    loginClick(){
-        this.setState({isHiddenLogin: false});
-        this.setState({isHiddenSignUp: true});
+
+    onChange(evt, filter) {
+        this.setState({ [filter]: evt })
     }
-    signUpClick(){
-        this.setState({isHiddenSignUp: false});
-        this.setState({isHiddenLogin: true});
+    loginClick() {
+        this.setState({ isHiddenLogin: false });
+        this.setState({ isHiddenSignUp: true });
     }
-    onClickLogin(){
+    signUpClick() {
+        this.setState({ isHiddenSignUp: false });
+        this.setState({ isHiddenLogin: true });
     }
     render() {
-        return (
-            <div className='author-wrap'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-xl-3'></div>
-                        <div className='col-xl-6'>
-                            <div className='author'>
-                                <div className='logo d-flex justify-content-center'>
-                                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                                    <img src={logo}></img>
-                                </div>
-                                <div className='title d-flex justify-content-center'>
-                                    <p onClick={this.loginClick} className='login'>Login</p>
-                                    <p onClick={this.signUpClick} className='signup'>Sign Up</p>
-                                </div>
+        console.log(typeof(this.state.isAuthenticated))
+            return (
+                <div className='author-wrap'>
+                    <div className='container'>
+                        <div className='row'>
+                            <div className='col-xl-3'></div>
+                            <div className='col-xl-6'>
+                                <div className='author'>
+                                    <div className='logo d-flex justify-content-center'>
+                                        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                                        <img src={logo}></img>
+                                    </div>
+                                    <div className='title d-flex justify-content-center'>
+                                        <p onClick={this.loginClick} className='login'>Login</p>
+                                        <p onClick={this.signUpClick} className='signup'>Sign Up</p>
+                                    </div>
 
-                                {this.state.isHiddenSignUp === false 
-                                    ? 
-                                <div className='no_show'>
-                                    <div className='content'>
-                                        <Login name ='email' onChange={this.onChange} value={this.state.username} hint='Example: email@example.com'/>
-                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
-                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
-                                    </div>
-                                    <div className='footer'>
-                                        <Button name='Sign Up'/>
-                                    </div>
-                                </div>
-                                    : 
-                                <div className='show'>
-                                    <div className='content'>
-                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
-                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
-                                    </div>
-                                    <div className='footer'>
-                                        <Button LoginClick={this.onClickLogin} name='Login'/>
-                                        <p className='forgot_pass'>Forgot password</p>
-                                    </div>
-                                </div> 
-                                }
-                                {/* <div className='show'>
+                                    {this.state.isHiddenSignUp === false
+                                        ?
+                                        <div className='no_show'>
+                                            <div className='content'>
+                                                <Login name='email' onChange={this.onChange} value={this.state.username} hint='Example: email@example.com' />
+                                                <Login name='username' onChange={this.onChange} value={this.state.username} hint='Please enter username' />
+                                                <Login password='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password' />
+                                            </div>
+                                            <div className='footer'>
+                                                <Button onClick={this.loginClick} name='Sign Up' />
+                                            </div>
+                                        </div>
+                                        :
+                                        <div className='show'>
+                                            <div className='content'>
+                                                <Login name='username' onChange={this.onChange} value={this.state.username} hint='Please enter username' />
+                                                <Login password='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password' />
+                                            </div>
+                                            <div className='footer'>
+                                                {this.isAuthenticated}
+                                                <Button onClick={this.props.onClickLogin} username={this.state.username}
+                                                    password={this.state.password} name='Login button' />
+                                                <p className='forgot_pass'>Forgot password</p>
+                                            </div>
+                                        </div>
+                                    }
+                                    {/* <div className='show'>
                                     <div className='content'>
                                         <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
                                         <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
@@ -86,7 +100,7 @@ class Login_SignUp extends Component {
                                         <p className='forgot_pass'>Forgot password</p>
                                     </div>
                                 </div> */}
-                                {/* <div className='no_show'>
+                                    {/* <div className='no_show'>
                                     <div className='content'>
                                         <Login name ='email' onChange={this.onChange} value={this.state.username} hint='ex: email@example.com'/>
                                         <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
@@ -96,15 +110,18 @@ class Login_SignUp extends Component {
                                         <Button name='Sign Up'/>
                                     </div>
                                 </div> */}
+                                </div>
                             </div>
+                            <div className='col-xl-3'></div>
                         </div>
-                        <div className='col-xl-3'></div>
                     </div>
                 </div>
-            </div>
-            
-            
-        );
+
+
+            );
+        }
     }
-}
+// }
+
+
 export default Login_SignUp;

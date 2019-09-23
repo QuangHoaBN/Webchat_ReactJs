@@ -27,7 +27,7 @@ export default class Search extends React.Component {
             <div class='search-bar_sidebar'> 
                 <div class='input-search_sidebar'>
                     <img class='' src='https://static.thenounproject.com/png/105498-200.png'></img>
-                    <input class='col-10' value = {this.state.inputText} name = "inputText" onChange = {this.handleChangeText}/>
+                    <input onChange = {(text) => this.props.onChange(text.target.value)} class='col-10'/>
                 </div>
             </div>
         )

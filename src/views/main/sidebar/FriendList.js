@@ -14,7 +14,7 @@ export default class FriendList extends React.Component {
 
     }
 
-    componentDidMount(){
+    componentWillMount(){
         console.log(this.props.listFriend);
         this.setState (() => {
             return{
@@ -25,15 +25,14 @@ export default class FriendList extends React.Component {
     }
 
     render() {
-        console.log(this.state.fList);
+        console.log(this.props.listFriend);
         return(
-            // this.state.fList.map((value, index) => (
                 this.props.listFriend.map((value, index) => (
                 <div class = "fItem_sidebar">
                     <img class = "img-fluid fAvatar_sidebar" src = {value.imgUrl} alt = {value.fName} />
                     <p class = "fName_sidebar">{value.fName}</p>
                 </div>
-            ))
+                ))
         )
     }
 }

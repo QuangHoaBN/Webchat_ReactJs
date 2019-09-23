@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Search from './search'
 import FriendList from './FriendList'
 import './sidebar.css'
+import UserInfo from './UserInfo';
 
 class SideBar extends Component {
 
@@ -15,6 +16,7 @@ class SideBar extends Component {
         this.OnlineShow = this.OnlineShow.bind(this);
         this.MessagesShow = this.MessagesShow.bind(this);
         this.SelectChecker = this.SelectChecker.bind(this);
+        this.searchMethod = this.searchMethod.bind(this);
     }
 
     SelectChecker (choice) {
@@ -26,10 +28,15 @@ class SideBar extends Component {
     }
 
     OnlineShow() {
-        const fcList = [{imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+        const fcList = [{imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "aLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "bLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "cLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "dLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "eLê Vũ"},
             {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
-            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"}];
-
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},];
         this.setState ({
             fList : fcList,
             onlShow: true
@@ -46,15 +53,44 @@ class SideBar extends Component {
         })
     }
 
+    searchMethod(text) {
+        const fcList = [{imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "aLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "bLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "cLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "dLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "eLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},];
+        let searchResult = [];
+        console.log(text);
+        fcList.map(function(value, index) {
+            if(value.fName.toLowerCase().indexOf(text.toLowerCase()) == 0 || text == ''){
+                searchResult.push(value);
+            }
+        })
+        console.log(searchResult);
+
+        this.setState({
+            fList: searchResult,
+        })
+    }
+
     componentWillMount(){
 
     }
 
     componentDidMount(){
-        const fcList = [{imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+        const fcList = [{imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "aLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "bLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "cLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "dLê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "eLê Vũ"},
             {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
-            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"}];
-
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},
+            {imgUrl: "https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png", fName: "Lê Vũ"},];
         this.setState ({
             fList : fcList
         })
@@ -64,9 +100,11 @@ class SideBar extends Component {
         // console.log(this.state.fList);
         const onlShow = this.state.onlShow;
         return (
-            <div>
+            <div className = "fList_sidebar"> 
+                <UserInfo userName = {this.props.userName} onClickLogout = {this.props.onClickLogout} />
+
                 <img class="img-fluid logo_sidebar" src="http://itplus-academy.edu.vn/upload/b7ad33828b0773d8f301805541d453df/files/java/%E1%BA%A2nh/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg" alt="icon"></img>
-                <Search/>
+                <Search onChange = {this.searchMethod}/>
 
                 <div class='option_sidebar d-flex justify-content-between'>
                     <p style={{color: onlShow ? '#dda52d' : ''}} onClick={this.SelectChecker.bind(this, 'OnlineShow')}>
@@ -77,7 +115,10 @@ class SideBar extends Component {
                     </p>
                 </div>    
 
-                <FriendList className='' listFriend = {this.state.fList}/>
+                <div className = "fList_sidebar">
+                    <FriendList listFriend = {this.state.fList}/>
+                </div>
+                
             </div>
         );
     }
