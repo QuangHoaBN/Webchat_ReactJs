@@ -44,6 +44,16 @@ class App extends Component {
     }
     this.Login = this.Login.bind(this);
     this.Logout = this.Logout.bind(this);
+    this.Register = this.Register.bind(this);
+  }
+
+  componentWillMount() {
+    let _isAuthen = localStorage.getItem("isAuthenticated") == 'true';
+    let _userName = localStorage.getItem("userName");
+    this.setState ({
+      isAuthenticated: _isAuthen,
+      userName: _userName,
+    })
   }
 
   Login(userName, password) {
@@ -74,12 +84,25 @@ class App extends Component {
     })
   }
 
+  Register(userName, password, email) {
+    console.log(email);
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("password", password);
+    localStorage.setItem("email", email);
+    localStorage.setItem("isAuthenticated", true);
+    
+    this.setState({
+      userName: userName,
+      isAuthenticated: true
+    })
+  }
+
   render() {
     return (
       <Router>
         <Route path="/" render={() => (this.state.isAuthenticated ? <Redirect to="/" /> : <Redirect to="/login" />)} />
-        <Route path="/login" render={() => <Authen onClickLogin={this.Login} />} />
-        <Route exact path="/" render={() => <Homepage onClickLogout={this.Logout} />} />
+        <Route path="/login" render={() => <Authen onClickLogin={this.Login} onClickRegister={this.Register}/>} />
+        <Route exact path="/" render={() => <Homepage onClickLogout={this.Logout} userName = {this.state.userName}/>} />
       </Router>
       // <Homepage />
     );
