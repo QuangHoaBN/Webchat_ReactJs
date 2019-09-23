@@ -39,7 +39,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAuthenticated : true
+      isAuthenticated : false
     }
     this.Login = this.Login.bind(this);
     this.Logout = this.Logout.bind(this);

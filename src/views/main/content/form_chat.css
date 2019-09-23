@@ -3,7 +3,7 @@
     position: relative;
 }
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     height: 50px;
     width: 100%;
@@ -17,7 +17,7 @@
     padding-left: 10px;
 }
 .content {
-    position: fixed;
+    position: absolute;
     overflow: auto;
     top: 60px;
     bottom: 55px;
@@ -29,7 +29,7 @@
     /* background-image: linear-gradient(to right, rgba(255,0,0,0), #133940); */
 }
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     height: 50px;
     width: 100%;
