@@ -14,7 +14,7 @@ class Form_Chat extends Component {
             out_text: '',
             currenNow: now.getHours()+':'+now.getMinutes(),
             isSended: false,
-            status: ''
+            status: '',
         };
         this.input_text=this.input_text.bind(this);
         this.send=this.send.bind(this);
@@ -27,16 +27,17 @@ class Form_Chat extends Component {
         this.setState({out_text: this.state.in_text,currenNow: now.getHours()+':'+now.getMinutes(), status: 'Đã gửi',isSended: true ,in_text: ''});
     
     }
+    
     render() {
         return (
             <div className='form-chat container-fluid'>
                 <div className='header row'>
                     <div>
                         {/*eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-                        <img width='32px' height='32px' src={Person} alt='error image'></img>
+                        <img width='32px' height='32px' src={this.props.fImg} alt='error image'></img>
                     </div>
                     <div className='name'>
-                        <p>Nguyễn Quang Hòa</p>
+                        <p>{this.props.fName}</p>
                     </div>
                 </div>
                 <div className='content row'>
