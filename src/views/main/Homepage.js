@@ -6,34 +6,34 @@ import './main.css'
 
 
 export default class Homepage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isShowChat: false,
+            name: '',
+            img: '',
+        };
+        this.show=this.show.bind(this);
+    }
+    show(na,im) {
+        this.setState({isShowChat: true, name: na, img: im });
+    }
     render() {
-    //     return (
-    //         <div className='web-chat'>
-    //              <div class = "container-fluid sidebar-wrapper">
-    //                 <div className='row'>
-    //                 <div class = "col-3 sidebar-wrapper">
-    //                     <SideBar />
-    //                 </div>
-    //                 <div class = "col-9">
-    //                     {/* <Ads /> */}
-    //                     <Form_Chat />
-    //                 </div>
-    //                 </div>
-    //             </div>
-    //         </div> 
-    //     )
-    // }
-
         return (
-            <div className='web-chat_main'>
-                <div class = "sidebar-wrapper_main">
-                    <SideBar />
-                </div>
-                <div class = "chat-wrapper_main">
-                    {/* <Ads /> */}
-                    <Form_Chat />
+            <div className='web-chat-main'>
+                 <div class = "container-fluid sidebar-wrapper">
+                    <div className='row'>
+                    <div class = "col-xl-3 sidebar-wrapper">
+                        <SideBar showChat={this.show}/>
+                    </div>
+                    <div class = "col-xl-9 chat-wrapper_main">
+                        {/* eslint-disable-next-line react/jsx-pascal-case */}
+                        {!this.state.isShowChat ? <Ads /> : <Form_Chat fImg={this.state.img} fName={this.state.name}/>}
+                    </div>
+                    </div>
                 </div>
             </div> 
         )
     }
+
 }

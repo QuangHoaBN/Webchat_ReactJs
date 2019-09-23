@@ -76,34 +76,12 @@ class Login_SignUp extends Component {
                                     </div>
                                 </div> 
                                 }
-                                {/* <div className='show'>
-                                    <div className='content'>
-                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
-                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
-                                    </div>
-                                    <div className='footer'>
-                                        <Button name='Login'/>
-                                        <p className='forgot_pass'>Forgot password</p>
-                                    </div>
-                                </div> */}
-                                {/* <div className='no_show'>
-                                    <div className='content'>
-                                        <Login name ='email' onChange={this.onChange} value={this.state.username} hint='ex: email@example.com'/>
-                                        <Login name ='username' onChange={this.onChange} value={this.state.username} hint='Please enter username'/>
-                                        <Login password ='password' name='password' onChange={this.onChange} value={this.state.password} hint='Please enter password'/>
-                                    </div>
-                                    <div className='footer'>
-                                        <Button name='Sign Up'/>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                         <div className='col-xl-3'></div>
                     </div>
                 </div>
-            </div>
-            
-            
+            </div>   
         );
     }
 }

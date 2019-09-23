@@ -75,7 +75,6 @@ class App extends Component {
         <Route path = "/login" component = {AuthenShow}/>
         <Route exact path = "/" component = {HomepageShow}/>
       </Router>
-      // <Homepage />
     );
   }
 }
