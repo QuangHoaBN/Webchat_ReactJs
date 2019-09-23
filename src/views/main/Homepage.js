@@ -24,7 +24,7 @@ export default class Homepage extends React.Component {
                  <div class = "container-fluid sidebar-wrapper">
                     <div className='row'>
                     <div class = "col-xl-3 sidebar-wrapper">
-                        <SideBar showChat={this.show}/>
+                        <SideBar showChat={this.show} onClickLogout = {this.props.onClickLogout}/>
                     </div>
                     <div class = "col-xl-9 chat-wrapper_main">
                         {/* eslint-disable-next-line react/jsx-pascal-case */}
