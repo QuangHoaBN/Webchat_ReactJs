@@ -43,11 +43,15 @@
     align-items: center;
 }
 .send_contend {
-    position: absolute;
-    bottom: 10px;
-    right: 5px;
-    max-width: 30%;
+    display: block;
+    width: auto;
     border-radius: 5px;
     background-color: cyan;
+}
+.time_send {
+    text-align: center;
+}
+.border-content {
+    position: relative;
 }
 

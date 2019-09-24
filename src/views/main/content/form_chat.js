@@ -23,10 +23,8 @@ class Form_Chat extends Component {
         this.setState({in_text: text.target.value});
     }
     send(){
-        // let now =new Date();
-        // this.setState({out_text: this.state.in_text, currenNow: now.getHours()+':'+now.getMinutes(), status: 'Đã gửi',isSended: true ,in_text: ''});
         let now =new Date();
-        const hList = [{out_text: this.state.in_text, currenNow: now.getHours()+':'+now.getMinutes(), status: 'Đã gửi'}]
+        const hList = {out_text: this.state.in_text, currenNow: now.getHours()+':'+now.getMinutes(), status: 'Đã gửi'};
         let lists=this.state.list;
         lists.push(hList);
         this.setState({
@@ -47,8 +45,16 @@ class Form_Chat extends Component {
                     </div>
                 </div>
                 <div className='content row'>
-                    {/* {!this.state.isSended || this.state.out_text==='' ? '' : <InboxSend content={this.state.out_text} date={this.state.currenNow} status={this.state.status}/>} */}
-                    {!this.state.isSended ? '' : <InboxSend listInbox={this.state.list} />}
+                    <div className='border-content'>
+                        <div className='receive col-xl-6'></div>
+                        <div className='send col-xl-6'>
+                            {!this.state.isSended ? '' : <InboxSend listInbox={this.state.list} />}
+                        </div>
+                    </div>
+                    {/* <div className='receive col-xl-6'></div>
+                    <div className='send col-xl-6'>
+                        {!this.state.isSended ? '' : <InboxSend listInbox={this.state.list} />}
+                    </div> */}
                 </div>
                 <div className='footer row'>
                     <input className='col-xl-11 chat_input' value={this.state.in_text} onChange={this.input_text} placeholder='Nhập ...'></input>
