@@ -45,16 +45,13 @@ class Form_Chat extends Component {
                     </div>
                 </div>
                 <div className='content row'>
-                    <div className='border-content'>
-                        <div className='receive col-xl-6'></div>
-                        <div className='send col-xl-6'>
-                            {!this.state.isSended ? '' : <InboxSend listInbox={this.state.list} />}
-                        </div>
-                    </div>
-                    {/* <div className='receive col-xl-6'></div>
-                    <div className='send col-xl-6'>
+                    {/* <div className='border-content'>
                         {!this.state.isSended ? '' : <InboxSend listInbox={this.state.list} />}
                     </div> */}
+                    <div className='receive col-xl-6'></div>
+                    <div className='send col-xl-6'>
+                        {!this.state.isSended ? '' : <InboxSend listInbox={this.state.list} />}
+                    </div>
                 </div>
                 <div className='footer row'>
                     <input className='col-xl-11 chat_input' value={this.state.in_text} onChange={this.input_text} placeholder='Nhập ...'></input>

@@ -53,5 +53,7 @@
 }
 .border-content {
     position: relative;
+    width: 100%;
+    margin: 5px 5px 5px 5px;
 }
 
