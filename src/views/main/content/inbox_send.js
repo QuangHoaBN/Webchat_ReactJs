@@ -3,10 +3,10 @@ import './form_chat.css';
 
 function InboxSend(props) {
     return (
-        props.listInbox.map((value, index) => (
+        props.listInbox.map((value, index) => ( //arrow function
             <div className='send_contend' key={index}>
                 <p className='inbox_send'>{value.out_text}</p>
-                {console.log(value.out_text)}
+                {console.log(value)}
                 <p className='time_send'>{value.currenNow} {value.status}</p>
             </div>
         ))

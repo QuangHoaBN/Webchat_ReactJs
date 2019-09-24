@@ -3,8 +3,8 @@ import './App.css';
 import Homepage from './views/main/Homepage';
 import Authen from './views/author/author';
 import {
-  BrowserRouter as Router, 
-  Route, 
+  BrowserRouter as Router,
+  Route,
   Redirect
 } from 'react-router-dom';
 
@@ -13,52 +13,74 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAuthenticated : true
+      isAuthenticated: false,
+      userName: ''
     }
     this.Login = this.Login.bind(this);
     this.Logout = this.Logout.bind(this);
+    this.Register = this.Register.bind(this);
   }
 
-  Login() {
-    this.setState({
-      isAuthenticated : true
+  componentWillMount() {
+    let _isAuthen = localStorage.getItem("isAuthenticated") == 'true';
+    let _userName = localStorage.getItem("userName");
+    this.setState ({
+      isAuthenticated: _isAuthen,
+      userName: _userName,
     })
   }
 
+  Login(userName, password) {
+    if (userName == 'MrHoan' && password == '123') {
+      localStorage.setItem("isAuthenticated", true);
+      localStorage.setItem("userName", userName);
+      localStorage.setItem("password", password);
+      //remove item
+      // let data = localStorage.getItem("data")
+      // localStorage.removeItem("")
+      // localStorage.clear
+      this.setState({
+        userName: userName,
+        isAuthenticated: true
+      })
+    }
+  }
+
   Logout() {
+    localStorage.removeItem("userName");
+    localStorage.removeItem("password");
+
+    localStorage.setItem("isAuthenticated", false);
+
     this.setState({
-      isAuthenticated : false
+      userName: '',
+      isAuthenticated: false
+    })
+  }
+
+  Register(userName, password, email) {
+    console.log(email);
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("password", password);
+    localStorage.setItem("email", email);
+    localStorage.setItem("isAuthenticated", true);
+    
+    this.setState({
+      userName: userName,
+      isAuthenticated: true
     })
   }
 
   render() {
-    console.log(this.state.isAuthenticated);
-    let isAuthen = this.state.isAuthenticated;
-    let routerLink = () => 
-      isAuthen ?
-        (<Router>
-          <Route exact path = "/" Component = {HomepageShow}/>
-        </Router>) : 
-        (<Router>
-          <Route path = "/login" Component = {AuthenShow}/>
-        </Router>)
-
     return (
       <Router>
-        <Route path = "/" render={() => (this.state.isAuthenticated ? <Redirect to="/"/> : <Redirect to="/login"/>)}/>
-        <Route path = "/login" component = {AuthenShow}/>
-        <Route exact path = "/" component = {HomepageShow}/>
+        <Route path="/" render={() => (this.state.isAuthenticated ? <Redirect to="/" /> : <Redirect to="/login" />)} />
+        <Route path="/login" render={() => <Authen onClickLogin={this.Login} onClickRegister={this.Register}/>} />
+        <Route exact path="/" render={() => <Homepage onClickLogout={this.Logout} userName = {this.state.userName}/>} />
       </Router>
+      // <Homepage />
     );
   }
-}
-
-function HomepageShow(){
-  return <Homepage />
-}
-
-function AuthenShow(){
-  return <Authen />
 }
 
 export default App;
